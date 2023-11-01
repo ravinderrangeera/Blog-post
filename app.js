@@ -6,7 +6,6 @@ mongoose.connect(process.env.MONGO_DB_URL,{
     useNewUrlParser: true
 });
 
-console.log(process.env.MONGO_DB_URL);
 const ejs = require('ejs');
 const fileUpload = require('express-fileupload');
 const expressSession = require('express-session');
