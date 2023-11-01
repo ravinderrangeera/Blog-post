@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://ravirangera0:blogProject123@cluster0.oigkiff.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect(process.env.MONGO_DB_URL,{
     useNewUrlParser: true
 });
 
@@ -23,7 +23,7 @@ const loginController = require('./controllers/login')
 const loginUserController = require('./controllers/loginUser')
 const logoutController = require('./controllers/logout')
 
-
+require('dotenv').config();
 
 app.set('view engine', 'ejs');
 
