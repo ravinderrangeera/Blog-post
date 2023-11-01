@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
-
+require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_DB_URL,{
     useNewUrlParser: true
 });
 
-
+console.log(process.env.MONGO_DB_URL);
 const ejs = require('ejs');
 const fileUpload = require('express-fileupload');
 const expressSession = require('express-session');
@@ -23,7 +23,7 @@ const loginController = require('./controllers/login')
 const loginUserController = require('./controllers/loginUser')
 const logoutController = require('./controllers/logout')
 
-require('dotenv').config();
+
 
 app.set('view engine', 'ejs');
 
